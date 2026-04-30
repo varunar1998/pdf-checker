@@ -1,13 +1,3 @@
-import sys
-import sqlite3
-
-# This forces the app to use the pysqlite3-binary instead of the system default
-try:
-    __import__('pysqlite3')
-    import pysqlite3
-    sys.modules['sqlite3'] = pysqlite3
-except ImportError:
-    pass
 import streamlit as st
 import chromadb
 from sentence_transformers import SentenceTransformer
