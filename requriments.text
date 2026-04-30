@@ -2,7 +2,7 @@ streamlit
 torch
 torchvision
 sentence-transformers
-chromadb
+chromadb==0.4.24
 google-generativeai
 pydantic>=2.0
 protobuf==4.25.3
