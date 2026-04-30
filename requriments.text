@@ -8,3 +8,4 @@ pydantic>=2.0
 protobuf==4.25.3
 pymupdf
 chromadb
+pysqlite3-binary
