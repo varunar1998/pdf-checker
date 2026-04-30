@@ -1,4 +1,4 @@
-import __import__
+
 import sys
 
 # This forces the app to use the updated sqlite3 version you added to requirements.txt
