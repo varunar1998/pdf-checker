@@ -1,4 +1,7 @@
+
 streamlit
+chromadb
+pysqlite3-binary
 torch
 torchvision
 sentence-transformers
@@ -7,6 +10,4 @@ google-generativeai
 pydantic>=2.0
 protobuf==4.25.3
 pymupdf
-pysqlite3-binary
-pysqlite3
-chromadb
+
