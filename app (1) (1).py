@@ -1,20 +1,14 @@
 # Alternative patch code
+# Simple and proven approach for Python 3.11
+__import__('pysqlite3')
 import sys
-import subprocess
-import importlib
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
-# Try to install pysqlite3 if not available
-try:
-    import pysqlite3
-    sys.modules['sqlite3'] = pysqlite3
-except ImportError:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "pysqlite3-binary"])
-    import pysqlite3
-    sys.modules['sqlite3'] = pysqlite3
-
-# Now import your other packages
+# Now your normal imports
 import streamlit as st
 import chromadb
+
+# Rest of your app code...
 from sentence_transformers import SentenceTransformer
 import google.generativeai as genai
 import fitz  # PyMuPDF
