@@ -1,8 +1,18 @@
-__import__('pysqlite3')
+# Alternative patch code
 import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+import subprocess
+import importlib
 
-# --- Your original imports go below this line ---
+# Try to install pysqlite3 if not available
+try:
+    import pysqlite3
+    sys.modules['sqlite3'] = pysqlite3
+except ImportError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "pysqlite3-binary"])
+    import pysqlite3
+    sys.modules['sqlite3'] = pysqlite3
+
+# Now import your other packages
 import streamlit as st
 import chromadb
 from sentence_transformers import SentenceTransformer
