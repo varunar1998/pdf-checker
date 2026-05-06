@@ -1,8 +1,4 @@
-# Alternative patch code
-# Simple and proven approach for Python 3.11
-__import__('pysqlite3')
-import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 
 # Now your normal imports
 import streamlit as st
